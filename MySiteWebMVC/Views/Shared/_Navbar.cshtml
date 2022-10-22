@@ -1,0 +1,58 @@
+﻿@{
+	//Para hacer este bloque se llama Razor
+	string _home = "";
+	string _products = "";
+	string _form = "";
+	string _dynamicpage = "";
+	string _jquery = "";
+	string _test = "";
+	string _homework = "";
+	string _anectoda = "";
+	if(ViewBag.active.Equals("home"))
+	{
+		_home = "active";
+	}
+	else if (ViewBag.active.Equals("products"))
+	{
+		_products = "active";
+	}
+	else if (ViewBag.active.Equals("form"))
+	{
+		_form = "active";
+	}
+	else if (ViewBag.active.Equals("dynamicpage"))
+	{
+		_dynamicpage = "active";
+	}
+	else if (ViewBag.active.Equals("jquery"))
+	{
+		_jquery = "active";
+	}
+	else if (ViewBag.active.Equals("test"))
+	{
+		_test = "active";
+	}
+	else if (ViewBag.active.Equals("homework"))
+	{
+		_homework = "active";
+	}
+	else if (ViewBag.active.Equals("anectoda"))
+	{
+		_anectoda = "active";
+	}
+}
+
+<div class="navbar">
+	<ul>
+		
+		<li class="@_home"><a href="/Home">Home</a></li>
+		<li class="@_products"><a href="/Products">Productos</a></li>
+		<li class="@_form"><a href="/Home/Form">Formulario</a></li>
+		<li class="@_dynamicpage"><a href="/Home/DynamicPage">Página dinámica</a></li>
+        <li class="@_homework"><a href="/Home/Homework">Homework</a></li>
+		<li class="@_test"><a href="/Home/Test">Examen</a></li>
+		<li class="@_jquery"><a href="/Home/Jquery">jQuery</a></li>
+        <li class="right _anectoda"><a href="/Home/Anectoda">Anécdota</a></li>
+
+	</ul>
+</div>

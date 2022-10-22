@@ -1,0 +1,17 @@
+﻿@model  MySiteWebMVC.Models.ProductViewModel
+
+@section ViewCSS{
+	<link rel="stylesheet" href="~/css/products.css" />
+
+	<title>Catalogo de Productos</title>
+}
+
+<div>Id de producto: @Model.Product.Id</div>
+
+<div>Nombre de producto: @Model.Product.Name</div>
+
+<div>Precio de producto: @Model.Product.Price</div>
+
+@section Scripts{
+	<script src="/js/js/Index.js"></script>
+}

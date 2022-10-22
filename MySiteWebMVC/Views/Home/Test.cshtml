@@ -1,0 +1,202 @@
+﻿@model  MySiteWebMVC.Models.TestViewModel
+
+@section ViewCSS{
+	<link rel="stylesheet" href="~/css/test.css" />
+
+	<title>Catalogo de Productos</title>
+}
+
+   <h2 class="title">
+      JavaScript
+    </h2>
+
+    <div class="img">
+
+    <img class="img-01" src="http://placeimg.com/400/400/tech" alt="">
+    <img class="img-02" src="http://placeimg.com/400/400/animals" alt="">
+    <img class="img-03" src="http://placeimg.com/400/400/tech" alt="">
+    </div>
+
+    <label class="background1" ></label>
+
+    <div class="container">
+      <div class="body-01">
+        <h1 class="title-secundary">Nombre de libro / Manga</h1>
+        <label class="text-primary" id="Books"></label>
+      </div>
+      <!-- cambiar MainsCharacters -->
+      <div class="body-02"> 
+        <h1 class="title-secundary">Numero de paginas / Tomos</h1>
+        <label class="text-primary" id="numberpages"></label>
+      </div>
+
+      <div class="body-03">
+        <h1 class="title-secundary">Lista de personajes principales</h1>
+        <label class="text-primary" id="MainsCharacters"></label>
+      </div>
+
+      <div class="body-04">
+        <h1 class="title-secundary">¿Esta basado en hechos reales?</h1>
+        <label class="text-primary" id="BasedRealFacts"></label>
+      </div>
+      
+      <div class="body-05">
+        <h1 class="title-secundary">¿Esta adaptado al cine / Serie?</h1>
+        <label class="text-primary" id="Cinemaa"></label>
+      </div>
+
+      <div class="body-06">
+        <h1 class="title-secundary"> Datos de tu personaje favorito del libro / Manga</h1>   
+        <label class="text-primary" id="MainCharacterFeatures"></label>
+      </div>
+      <div class="body-07">
+        <h1 class="title-secundary">Lista de libros / Tomos</h1>
+        <label class="text-primary" id="BookList"></label>
+        Nombre <input type="text"> Numero de paginas <input type="text">
+        <button id="insert" onclick="addbooks()">Agregar</button>
+      </div>  
+    </div>
+
+    <script>
+      let CuentoDeTerrorLovecraft = {
+        Book: "Cuentos de terror de H.P. LOVECRAFT",
+        NumberPages: 303,
+        MainCharacters1: ["Howard Phillips Lovecraft", "Otros"],
+        realFacts: false,
+        cinema: false,
+        Characteristic: {
+          gender: "Terror Cosmico - Ciencia Ficcion",
+          attitude: "Agresivo",
+        },
+      };
+
+      let LosMejoresCuentesBreves = {
+        Book: "Los Mejores Cuento Breves H.P. LOVECRAFT",
+        NumberPages: 415,
+        MainCharacters2: ["Muchos", "Las ratas en las paredes"],
+        realFacts: false,
+        cinema: false,
+        Characteristic: {
+          gender: "Terror Cosmico",
+          attitude: "Agresivo",
+        },
+      };
+
+      let LaLlamadadeCthulhu = {
+        Book: "La Llamada de Cthulhu H.P. LOVECRAFT",
+        NumberPages: 96,
+        MainCharacters3: ["Muchos", "Cthulhu"],
+        realFacts: false,
+        cinema: false,
+        Characteristic: {
+          gender: "Terror Cosmico",
+          attitude: "Agresivo",
+        },
+      };
+
+      let EnLasMontañasdelaLocura = {
+        Book: "En Las Montañas de la Locura H.P. LOVECRAFT",
+        NumberPages: 496,
+        MainCharacters4: ["Frank H. Pabodie", "Cthulhu"],
+        realFacts: false,
+        cinema: false,
+        Characteristic: {
+          gender: "Terror Cosmico",
+          attitude: "Agresivo",
+        },
+      };
+
+      let Necronomicon = {
+        Book: "El Necronomicon H.P. LOVECRAFT",
+        NumberPages: 281,
+        MainCharacters5: [
+          "Howard Phillips Lovecraft",
+          "Árabe loco Abdul Alhazre",
+        ],
+        realFacts: false,
+        cinema: false,
+        Characteristic: {
+          gender: "Terror Cosmico",
+          attitude: "Agresivo",
+        },
+      };
+
+      let array = [
+        CuentoDeTerrorLovecraft,
+        LosMejoresCuentesBreves,
+        LaLlamadadeCthulhu,
+        EnLasMontañasdelaLocura,
+        Necronomicon,
+      ];
+
+      function Books() {
+        let value = array[0].Book;
+        document.querySelector("#Books").textContent = value;
+      }
+      Books();
+
+      function MainsCharacters() {
+        let value = array[0].MainCharacters1;
+        document.querySelector("#MainsCharacters").textContent = value;
+      }
+      MainsCharacters();
+
+      function numberpages() {
+        let value = array[0].NumberPages;
+        document.querySelector("#numberpages").textContent = value;
+      }
+      numberpages();
+
+      function MainCharacterFeatures() {
+        let value =
+          `Genero: ${array[0].Characteristic.gender}, ` +
+          ` Actitud: ${array[0].Characteristic.attitude}`;
+        document.querySelector("#MainCharacterFeatures").textContent = value;
+      }
+      MainCharacterFeatures();
+
+      function BasedRealFacts() {
+        let value = array[0].realFacts;
+        if (value == true) {
+          document.querySelector("#BasedRealFacts").textContent =
+            "Esta basada en hechos reales";
+        } else {
+          document.querySelector("#BasedRealFacts").textContent =
+            "No esta basada en hechos reales";
+        }
+      }
+      BasedRealFacts();
+
+      function Cinemaaa() {
+        let value = array[0].cinema;
+        if (value == true) {
+          document.querySelector("#Cinemaa").textContent =
+            "Esta en el cine";
+        } else {
+          document.querySelector("#Cinemaa").textContent =
+            "No esta en el cine";
+        }
+      }
+      Cinemaaa();
+
+
+      var texto = ".";
+      function BookList() {
+        for (var i = 0; i < array.length; i++) {
+          texto = array[i].Book + texto;
+          const list = document.createElement("p");
+          list.innerText = array[i].Book;
+          document.querySelector("#BookList").appendChild(list);
+        }
+      }
+      BookList();
+
+      console.log(array);
+      function addbooks() {
+        document.querySelector("#insert").addEventListener("click", () => {
+          let inser = null;
+          inser = confirm("¿Desea agregar otro Libro?");
+         
+        });
+      }
+    </script>

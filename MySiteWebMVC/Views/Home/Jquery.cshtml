@@ -1,0 +1,53 @@
+﻿@model  MySiteWebMVC.Models.JqueryViewModel
+
+@section ViewCSS{
+	<link rel="stylesheet" href="~/css/jquery.css" />
+
+	<title>Catalogo de Productos</title>
+}
+
+
+ <div class="container">
+        <h2>Página dinámica con jQuery</h2>
+        <p>Palabras del glosario: <b>CDN</b> y <b>jQuery</b></p>
+        <div class="btn-actions">
+            <button id="btnEvent" class="btn btn-success">Cambiar color fondo</button>
+        </div>
+    </div>
+
+@section Scripts{
+	<script src="/js/dynamicpage.js"></script>
+}
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="/js/jquery-3.6.1.min.js"></script>
+    <script src="/js/dynamicpage.js"></script>
+    <script>
+        //const textH2 = document.querySelector(".cotainer h2");
+        const textH2 = $(".container h2");
+        textH2.css("color", "#0a58ca");
+        textH2.html("Mi nombre es <a href='http://www.facebook.com'>BrianJ</a>");
+
+        // $(".container .btn-actions").css("display", "flex");
+        // $(".container .btn-actions").css("justify-content", "center");
+
+        // Simplificamos modificación del css
+        $(".container .btn-actions").css({
+            "display" : "flex",
+            "justify-content" : "center"
+        });
+
+        // Eventos
+        $("#btnEvent").on("click", () =>{
+            //alert("El profesor es el mejor by Bernardo");
+            $(document.body).css({
+                "background-color" : getRandomColor()
+            });
+        });
+
+        //Inicializar document.ready con jQuery
+
+        $(document).ready(function()
+        {
+            $(".container h2").css("color", "red");
+        });
+    </script>

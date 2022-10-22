@@ -1,0 +1,164 @@
+﻿body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: aliceblue;
+    margin: 0px;
+    padding-bottom: 60px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.navbar li {
+    float: left;
+}
+
+    .navbar li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        .navbar li a:hover {
+            background-color: #111;
+        }
+
+    .navbar li.active {
+        background-color: rgb(148, 148, 148);
+    }
+
+    .navbar li.right {
+        float: right;
+        background-color: green;
+    }
+
+.container {
+    width: auto;
+    margin: 10px;
+    font-size: 20px;
+}
+
+    .container hr {
+        color: inherit;
+        border: 0;
+        border-top: 1px solid #ced4da;
+        margin: 45px 0px;
+    }
+
+    .container h2 {
+        text-align: center;
+    }
+
+    .container .pets h3 {
+        text-align: center;
+    }
+
+    .container .img-center {
+        display: flex;
+        justify-content: center;
+    }
+
+        .container .img-center img {
+            height: 500px;
+            text-align: center;
+        }
+
+        .container .img-center .img-left {
+            height: 500px;
+            text-align: center;
+        }
+
+        .container .img-center .img-left {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+
+        .container .img-center .img-right {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+/** Footer **/
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    height: auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/** General utlities **/
+
+.form-label {
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.form-control {
+    height: 35px;
+    display: block;
+    margin: auto;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+    .form-control:focus-visible {
+        outline: #9dc3e9 auto 1px;
+    }
+
+.btn {
+    min-height: 33px;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    border: 1px solid aliceblue;
+    background-color: #6c757d;
+    color: white;
+    display: inline-block;
+    text-align: center;
+}
+
+    .btn:hover {
+        background-color: #565e64;
+        cursor: pointer;
+    }
+
+    .btn:active {
+        background-color: #51585e;
+        cursor: pointer;
+    }
+
+.btn-success:hover {
+    background-color: #0a58ca;
+}
+
+.btn-success:active {
+    background-color: #0a53be;
+}
+
+.btn-success {
+    background-color: #0d6efd;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}

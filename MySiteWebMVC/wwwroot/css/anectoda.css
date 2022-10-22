@@ -1,0 +1,33 @@
+﻿.conteins {
+    margin: auto;
+    margin-top: 5px;
+    width: 1000px;
+    height: 1px;
+    background-color: transparent;
+}
+
+.body {
+    
+    margin: auto;
+    text-align: justify;
+    width: 800px;
+    height: 50px;
+    background-color: #8f1f1f;
+    border: 2px solid black;
+}
+
+.frame {
+    margin-top: 1px;
+    margin: 100px 390px;
+}
+
+.div-body-img-p {
+    display: flex;
+    margin: auto;
+    padding-right: 10px;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+    text-align: justify;
+    color: white;
+}

@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Image\" />
+    <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Image\954028.jpg" />
+    <None Include="wwwroot\Image\bigdaddy.png" />
+    <None Include="wwwroot\Image\Bio-Shock-Big-Daddy.jpg" />
+    <None Include="wwwroot\Image\Bioshock Infinite  Vintage Comic Cover by E-Mann on DeviantArt.png" />
+    <None Include="wwwroot\Image\bioshockinf.png" />
+    <None Include="wwwroot\Image\camino.jpg" />
+    <None Include="wwwroot\Image\descargar %282%29.jpg" />
+    <None Include="wwwroot\Image\fondo1.webp" />
+    <None Include="wwwroot\Image\Happy 10th Anniversary, BioShock!! %2821st August, 2017%29.jpg" />
+    <None Include="wwwroot\Image\hollow.png" />
+    <None Include="wwwroot\Image\html-5.ico" />
+    <None Include="wwwroot\Image\img1.jpeg" />
+    <None Include="wwwroot\Image\img2.jpg" />
+    <None Include="wwwroot\Image\img3.jpeg" />
+    <None Include="wwwroot\Image\img4.jpeg" />
+    <None Include="wwwroot\Image\jquery-3.6.1.min.js" />
+    <None Include="wwwroot\Image\Steam Community __ Hollow Knight.png" />
+    <None Include="wwwroot\Image\upqroo.png" />
+  </ItemGroup>
+
+</Project>

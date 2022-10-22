@@ -1,0 +1,41 @@
+﻿@model  MySiteWebMVC.Models.FormViewModel
+
+@section ViewCSS{
+	<link rel="stylesheet" href="~/css/form.css" />
+
+	<title>Formulario</title>
+}   
+
+ <div class="container">
+        <form action="" method="post">
+            <div class="form-register">
+                <div class="mb-5">
+                    <label class="title">Registro de usuario</label>
+                    <hr>
+                </div>
+                <div class="box-inputs">
+                    <div class="mb-10">
+                        <label class="form-label" for="name">Nombre: </label>
+                        <input class="form-control" type="text" name="name" id="name" placeholder="Ejemplo: Juanito">
+                    </div>
+                    <div class="mb-10">
+                        <label class="form-label" for="lastname">Apellidos: </label>
+                        <input class="form-control" type="text" name="lastname" id="lastname"
+                            placeholder="Ejemplo: Perez">
+                    </div>
+                    <div class="mb-10">
+                        <label class="form-label" for="gender">Género: </label>
+                        <select class="form-control" name="gender" id="gender">
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="box-actions">
+                    <button type="button" class="btn btn-success">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>

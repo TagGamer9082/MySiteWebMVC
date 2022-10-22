@@ -1,0 +1,60 @@
+﻿.container .box-wrap {
+    width: 100%;
+    display: flex;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+    .container .box-wrap .box-tools {
+        display: block;
+        float: left;
+        width: calc(50% - 20px);
+        min-height: 280px;
+        margin: 30px 10px;
+        padding: 30px;
+        box-sizing: border-box;
+        background-color: rgba(255, 255, 255, 1);
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+        border: 1px solid #ced4da;
+        height: auto;
+    }
+
+        .container .box-wrap .box-tools .text-color,
+        .container .box-wrap .box-tools h3 {
+            text-align: center;
+        }
+
+        .container .box-wrap .box-tools .btn {
+            font-size: 18px;
+        }
+
+        .container .box-wrap .box-tools .text-color {
+            margin-bottom: 40px;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+            .container .box-wrap .box-tools .text-color label {
+                padding: 5px;
+                background-color: white;
+                border-radius: 5px;
+            }
+
+        .container .box-wrap .box-tools .box-actions {
+            display: flex;
+            justify-content: center;
+        }
+
+@media (max-width: 660px) {
+    .container .box-wrap .box-tools {
+        min-height: 340px;
+    }
+}
+
+@media (max-width: 610px) {
+    .container .box-wrap .box-tools {
+        width: calc(100% - 20px);
+        min-height: auto;
+    }
+}

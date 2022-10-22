@@ -1,0 +1,200 @@
+﻿@model  MySiteWebMVC.Models.DynamicPageViewModel
+
+@section ViewCSS{
+	<link rel="stylesheet" href="~/css/dynamicpage.css" />
+
+	<title>Catalogo de Productos</title>
+}
+
+    <div class="container">
+        <h2>
+            Página dinámica con Javascript
+        </h2>
+        <div class="box-wrap">
+            <div class="box-tools btn-dynamic">
+                <h3>Eventos con botones</h3>
+                <div class="text-color">
+                    <label>
+                        rgba(95, 158, 160, 0.4);
+                    </label>
+                </div>
+                <div class="box-actions">
+                    <button id="changeBackgroundColorBox" onclick="changeBackgroundColorBox()"
+                        class="btn btn-success">Cambiar color caja</button>
+                    <button id="changeBackgroundColorBody" class="btn btn-success">Cambiar color body</button>
+                </div>
+            </div>
+            <div class="box-tools">
+                <h3>Formulario dinámico</h3>
+                <div class="mb-10">
+                    <label class="form-label" for="student">Nombre de estudiante:</label>
+                    <input class="form-control" name="student" id="student" type="text">
+                </div>
+                Resultado: <label class="input-result"></label>
+            </div>
+            <div class="box-tools">
+                <h3>Mensajes de alerta</h3>
+                <div class="box-actions">
+                    <button id="alert" class="btn btn-success" onclick="onClickAlert()">Alerta!</button>
+                    <button id="prompt" class="btn btn-success">Aviso</button>
+                    <button id="confirm" class="btn btn-success">Confirmación</button>
+                </div>
+                Resultado <b>Prompt:</b> <label class="prompt-result"></label>
+                <br>
+                Resultado <b>Confirm:</b> <label class="confirm-result"></label>
+            </div>
+            <div class="box-tools">
+                <h3>Juego del gato</h3>
+                <div style="text-align: center; margin-bottom: 10px;">
+                    <b style="color: red;">En construcción :( </b>
+                </div>
+                <div style="text-align: center;">
+                    <img style="width: 150px;" src="img/cat-sad.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    @section Scripts{
+	<script src="/js/dynamicpage.js"></script>
+}
+
+    <script src="js/index.js"></script>
+    <script src="js/dynamic.js"></script>
+    <script>
+        //Variable de ambito global
+        var HelloWorld = "hola mundo en javascript :) - 1";
+        console.log(HelloWorld);
+
+        //Ambito de bloques
+        if (true) {
+
+            //Variable de ambito de bloque
+            let HelloWorld2 = "hola mundo en javascript :) - 2";
+            var HelloWorld3 = "hola mundo en javascript :) - 3";
+        }
+
+        //console.log(HelloWorld2);
+        console.log(HelloWorld3);
+
+        //demostración del objeto Window donde guarda todas las variables globales
+        console.log(window); //buscar la variable HelloWorld
+        console.log(window.HelloWorld);
+        console.log(window.HelloWorld2);
+
+        //usar variables globales todo el tiempo es una mala práctica,
+        //cuando la lógica del sitio web sea más grande se puede traspapelar las variables.
+
+
+        /** Variable constantes **/
+
+        const name = "José Enrique";
+        const object2 = { name: "Jose" }
+
+        object2.lastname = "castro";
+
+        // console.log(name);
+
+        //Marcará un error al querer cambiar una constante
+        //name = "Luis Perez";
+        console.log("Variable name:", window.name);
+
+        /** Arreglos **/
+        //Glosario: Arreglo y objeto en programación
+
+        let array = ["Juanito", "Fulanito", "Menganito", "Pepito", "Benito", "Gepetto"];
+        console.log("Arreglo original", array);
+
+        //Se puede agregar más elementos a un arreglo
+        array.push("Josesito");
+        console.log("Se agregó un elemento", array);
+
+        //Pero tambien se puede eliminar elementos a un arreglo
+        array.shift();
+        console.log("Se eliminó el primer elemento", array);
+        array.pop();
+        console.log("Se eliminó el último elemento", array);
+
+        //Eliminar una posición especifica
+        array.splice(1, 3);
+        console.log("Se eliminó un rango de elementos, de la posición 1 a la 3", array);
+
+        //Eliminar un valor específico
+        //*Ojo que aquí se reemplaza el arreglo completo
+        array = array.filter((y) => y !== 'Gepetto');
+        console.log("Se buscó a 'Gepetto' y se eliminó", array);
+
+        /** Objetos **/
+
+        let object = {}
+        console.log("Objeto vacío", object);
+
+        object.name = "Juanito";
+        console.log("Se asigna una variable y un valor", object);
+
+        object.lastname = "Perez";
+        object.age = 28;
+        object.career = "Ingeniería en software"
+        console.log("Se pueden asignar más variables y valores", object);
+
+        //Hacer referencia a una variable del objeto
+        console.log("Carrera:", object.career);
+
+        //Qué pasa si hacemos referencia a una variable que no existe:
+        console.log("Variable que no existe:", object.address);
+        console.log("Objeto final", object);
+
+
+        let student = {
+            name: "Juanito",
+            lastname: "Perez",
+            age: 23,
+            career: "Ingenieria en Software",
+            grade: "4to cuatrimestre",
+            doYouLikeAnime: true,
+            hobbies: ["Jugar futbol", "Leer mangas", "Jugar videojuegos"],
+            contact: {
+                email: "juanito.perez@upqroo.mx",
+                phone: "9987456321",
+            },
+            introduceHimself() {
+                console.log(`Mi nombre es ${this.name}, 
+                tengo ${this.age} años, 
+                mis hobbies son: ${this.hobbies}`);
+            },
+        }
+
+        student.introduceHimself();
+
+        /** Variables indefinidas, nulas y NaN **/
+
+        //No se la ha asignado ningún valor
+        let _undefined;
+        console.log("Variable indefinida:", _undefined);
+
+        //Intencionalmente se le asigna un valor nulo
+        let _null = null;
+        console.log("Variable nula:", _null);
+
+        //Operaciones matemáticas con resultado no numérico
+        let notANumber = "gatito" * 3.4;
+        console.log("Not a Number:", notANumber);
+
+        //TIP: en la operación "+", si se puede usar para concatenar por lo
+        //que nuestro ejemplo sería así:
+        let concatenate = "gatito" + 3.4;
+        console.log("Concatenar:", concatenate);
+
+        /* Funciones */
+
+        let response = 0;
+
+        response = sum(3, 4);
+
+        console.log(response);
+
+        response = multiplication("gatito", 23);
+        console.log(response);
+
+        console.log(division(3, 4));
+    </script>

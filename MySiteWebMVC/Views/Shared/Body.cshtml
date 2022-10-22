@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/index.css" asp-append-version="true">
+	@*<title>MyWebSiteMVC | @Model.Title</title>*@
+	@await RenderSectionAsync("ViewCSS",required: false)
+</head>
+<body>
+
+	@*<partial name="~/View/Shared/_Navbar.cshtml" />*@
+	@await Html.PartialAsync("~/Views/Shared/_Navbar.cshtml")
+
+	@*Toma todo lo de html y lo muestra*@
+	@RenderBody()
+
+	@await Html.PartialAsync("~/Views/Shared/_Footer.cshtml")
+
+	@await RenderSectionAsync("Scripts",required: false)
+</body>
+</html>	
